@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c20f3f791e828545af3cbd10641be92, type: 3}
+  m_Name: Screen
+  m_EditorClassIdentifier: 
+  id: 2
+  nameItem: 'Ecran PC '
+  description: un ecran pc hdmi 2140p 27 pouces
+  image: {fileID: 21300000, guid: ebc8e48693399eb4bb18b20732b0be51, type: 3}
+  isQuestItem: 0
+  rarity: 1
+  typeItem: 2
+  price: 50
+  healthGiven: 0
+  isMultiplicationHealthGiven: 0
+  enduranceGiven: 0
+  isMultiplicationEnduranceGiven: 0
+  hungerGiven: 0
+  isMultiplicationHungerGiven: 0

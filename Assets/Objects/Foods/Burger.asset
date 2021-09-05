@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c20f3f791e828545af3cbd10641be92, type: 3}
+  m_Name: Burger
+  m_EditorClassIdentifier: 
+  id: 1
+  nameItem: Burger
+  description: un succulent burger, rend 30pv mais perd 5pe
+  image: {fileID: 21300000, guid: 0ab0887844cf66d4b85473336a645fa8, type: 3}
+  isQuestItem: 0
+  rarity: 0
+  typeItem: 0
+  price: 2
+  healthGiven: 30
+  isMultiplicationHealthGiven: 0
+  enduranceGiven: -5
+  isMultiplicationEnduranceGiven: 0
+  hungerGiven: 0
+  isMultiplicationHungerGiven: 0
