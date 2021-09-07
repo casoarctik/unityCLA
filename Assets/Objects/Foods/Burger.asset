@@ -22,7 +22,7 @@ MonoBehaviour:
   price: 2
   healthGiven: 30
   isMultiplicationHealthGiven: 0
-  enduranceGiven: -5
+  enduranceGiven: -15
   isMultiplicationEnduranceGiven: 0
-  hungerGiven: 0
+  hungerGiven: 50
   isMultiplicationHungerGiven: 0

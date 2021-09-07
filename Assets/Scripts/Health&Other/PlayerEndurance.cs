@@ -8,10 +8,23 @@ public class PlayerEndurance : MonoBehaviour
     public float maxEndurance = 100f;
     
     public float currentEndurance;
-
+    public static PlayerEndurance instance;
+    
     public EnduranceBar enduranceBar;
 
     public PlayerMovement playerMovement;
+    
+    
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerEndurance dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -29,9 +42,9 @@ public class PlayerEndurance : MonoBehaviour
             LoseEnduranceOnRun();
         }
 
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            TakeDamage(20f);
+            TakeOrLoseHe(-20f);
         }
 
         Fill();
@@ -42,7 +55,7 @@ public class PlayerEndurance : MonoBehaviour
     {
         if (currentEndurance > 0f)
         {
-            currentEndurance = currentEndurance - 0.010f;
+            currentEndurance = currentEndurance - 0.015f;
             enduranceBar.SetEndurance(currentEndurance);
         }
 
@@ -65,9 +78,22 @@ public class PlayerEndurance : MonoBehaviour
             currentEndurance = maxEndurance;
         }
     }
-    void TakeDamage(float damage)
+    public void TakeOrLoseHe(float endurancePoints)
     {
-        currentEndurance -= damage;
+        if ((currentEndurance + endurancePoints) > maxEndurance)
+        {
+            currentEndurance= maxEndurance;
+        }
+        else if ((currentEndurance + endurancePoints) < 0f)
+        {
+            currentEndurance = 0;
+            //hunger++;
+        }
+        else
+        {
+            currentEndurance += endurancePoints;
+            
+        }
         enduranceBar.SetEndurance(currentEndurance);
     }
 }

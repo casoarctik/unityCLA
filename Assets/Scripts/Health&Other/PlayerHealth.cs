@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
-
+    
     public static PlayerHealth instance;
     public float currentHealth;
 
@@ -35,6 +35,11 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeOrLoseHp(-20f);
+        }
+
+        if (PlayerHunger.instance.currentHunger == 0f)
+        {
+            TakeOrLoseHp(-0.002f);
         }
     }
 

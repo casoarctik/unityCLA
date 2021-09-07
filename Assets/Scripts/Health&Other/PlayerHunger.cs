@@ -7,9 +7,20 @@ public class PlayerHunger : MonoBehaviour
     public float maxHunger = 100f;
     
     public float currentHunger;
-
+    public static PlayerHunger instance;
     public HungerBar hungerBar;
     // Start is called before the first frame update
+    
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHunger dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     void Start()
     {
         currentHunger = maxHunger;
@@ -19,15 +30,33 @@ public class PlayerHunger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            TakeDamage(20f);
+            TakeOrLoseHh(-20f);
+        }
+
+        if (PlayerEndurance.instance.currentEndurance <= 0.01f)
+        {
+            TakeOrLoseHh(-0.01f);
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeOrLoseHh(float hungerPoints)
     {
-        currentHunger -= damage;
+        if ((currentHunger + hungerPoints) > maxHunger)
+        {
+            currentHunger = maxHunger;
+        }
+        else if ((currentHunger + hungerPoints) < 0f)
+        {
+            currentHunger = 0;
+            //Health --;
+        }
+        else
+        {
+            currentHunger += hungerPoints;
+            
+        }
         hungerBar.SetHunger(currentHunger);
     }
 }

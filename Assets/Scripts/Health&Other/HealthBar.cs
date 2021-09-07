@@ -23,7 +23,6 @@ public class HealthBar : MonoBehaviour
 
     private void SetNumberHealth(float health)
     {
-
-        this.healthNumber.text = health + "%";
+        this.healthNumber.text = Math.Truncate(health) + "%";
     }
 }

@@ -42,6 +42,7 @@ public class InventorySlot : MonoBehaviour {
     public void RemoveItemFromInventory ()
     {
         InventoryScript.instance.Remove(item);
+        actionsAndInfosPanel.SetActive(false);
     }
 
     // Use the item
@@ -50,6 +51,8 @@ public class InventorySlot : MonoBehaviour {
         if (item != null)
         {
             item.Use();
+            actionsAndInfosPanel.SetActive(false);
+            
         }
     }
     

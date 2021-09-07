@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
             UpdateUI();
         }
+        UpdateUI();
     }
 
     // Update the inventory UI by:
