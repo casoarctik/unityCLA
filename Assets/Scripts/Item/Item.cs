@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +24,18 @@ public class Item : ScriptableObject
     // Called when the item is pressed in the inventory
     public virtual void Use ()
     {
-        // Use the item
-        // Something may happen
+        if (typeItem == 0 || typeItem == 1)
+        {
+            PlayerHealth.instance.TakeOrLoseHp(healthGiven);
+            PlayerEndurance.instance.TakeOrLoseHe(enduranceGiven);
+            PlayerHunger.instance.TakeOrLoseHh(hungerGiven);
+            RemoveFromInventory();
+        }
+
+        if (typeItem == 2 || typeItem == 3)
+        {
+            Debug.Log("Feature en mise à jour");
+        }
     }
 
     // Call this method to remove the item from inventory
